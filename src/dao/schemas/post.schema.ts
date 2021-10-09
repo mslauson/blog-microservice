@@ -1,10 +1,22 @@
-import * as mongoose from "mongoose";
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Document, ObjectId } from 'mongoose';
 
-export const PostSchema = new mongoose.Schema({
-  string : mongoose.Schema.Types.ObjectId,
-  author: String,
-  postDate: Date,
-  lastUpdated: Date,
-  title: String,
-  body: String,
-});
+export type PostDocument = Post & Document;
+
+@Schema()
+export class Post {
+  @Prop()
+  string: ObjectId;
+  @Prop()
+  author: String;
+  @Prop()
+  postDate: Date;
+  @Prop()
+  lastUpdated: Date;
+  @Prop()
+  title: String;
+  @Prop()
+  body: String;
+}
+
+export const PostSchema = SchemaFactory.createForClass(Post);
