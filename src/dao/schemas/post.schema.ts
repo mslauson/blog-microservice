@@ -6,7 +6,7 @@ export type PostDocument = Post & Document;
 @Schema()
 export class Post {
   @Prop()
-  string: ObjectId;
+  id: ObjectId;
   @Prop()
   author: String;
   @Prop()
