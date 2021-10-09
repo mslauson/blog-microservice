@@ -1,5 +1,5 @@
 import { Connection } from "mongoose";
-import { PostSchema } from "src/schemas/post.schema";
+import { PostSchema } from "../schemas/post.schema";
 
 export const schemaProviders = [
   {
